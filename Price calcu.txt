@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/img/b1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-container {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 100px;
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            text-align: center; /* Center align content */
+        }
+        .menu-header {
+            font-family: 'Cursive', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 10px; /* Reduce the gap between items */
+        }
+        .menu-item > div {
+            width: calc(50% - 5px); /* Each checkbox takes up 50% minus half of the gap */
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.1); /* Add background color with transparency */
+            border-radius: 5px; /* Add border radius for a rounded look */
+        }
+        .price {
+            font-weight: bold;
+            color: #f5bc01; /* Change price text color to yellow */
+            margin-top: 5px; /* Increase space between Balloons and Price */
+        }
+        .checkbox {
+            margin-left: 10px;
+        }
+        .total {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .total-bill {
+            display: inline-block;
+            padding: 10px;
+            background-color: #f5bc01;
+            border-radius: 5px;
+            font-weight: bold;
+            color: black;
+        }
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1 class="menu-header">Customize</h1>
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Make a Wish</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 450</span>
+                    <span class="price">Rs-6750</span>
+                    <input type="checkbox" class="checkbox" data-price="6750">
+                </div>
+                <div>
+                    <span>Balloons - 900</span>
+                    <span class="price">Rs-13500</span>
+                    <input type="checkbox" class="checkbox" data-price="13500">
+                </div>
+                <!-- Add more items here -->
+            </div>
+        </div>
+        <!-- Add more menu sections and items here -->
+
+        <div class="total" id="total">Total: Rs-0</div>
+
+        <div class="total-bill" id="total-bill">Total Bill: Rs-0</div>
+
+        <a href="#" class="checkout-btn" onclick="redirectToCheckout()">Checkout</a>
+
+        <script>
+            // JavaScript to calculate the total bill based on selected items
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const totalDisplay = document.getElementById('total');
+            const totalBillDisplay = document.getElementById('total-bill');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateTotal);
+            });
+
+            function updateTotal() {
+                let total = 0;
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const price = parseFloat(checkbox.getAttribute('data-price'));
+                        if (!isNaN(price)) {
+                            total += price;
+                        }
+                    }
+                });
+                totalDisplay.textContent = `Total: Rs-${total}`;
+                totalBillDisplay.textContent = `Total Bill: Rs-${total}`;
+            }
+
+            function redirectToCheckout() {
+                // Placeholder function for redirecting to the checkout page
+                alert('Redirecting to checkout page...');
+            }
+        </script>
+    </div>
+</body>
+</html>

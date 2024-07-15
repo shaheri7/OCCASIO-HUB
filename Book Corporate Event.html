@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking corporate-event</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+        .booking-form {
+            background: url('/img/core4.avif') no-repeat center center fixed; 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .form-container {
+            background: linear-gradient(45deg, #000000 25%, #383838 25%, #383838 50%, #000000 50%, #000000 75%, #383838 75%, #383838 100%);
+            padding: 40px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            box-sizing: border-box;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: white;
+            font-family: 'Cursive', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color:#ffc506;
+            margin-bottom: 5px;
+            font-style: oblique;
+        }
+        input[type=text], input[type=date], input[type=time], input[type=number], select, textarea {
+            width: calc(100% - 40px); /* Match width of other input fields */
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+        select[name=place] {
+            width: calc(100% - 20px); /* Match width of other select fields */
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            width: calc(100% - 20px); /* Match width of other buttons */
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #d3a200;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-form">
+        <div class="form-container">
+            <h1 style="color: #ffc506; font-style: oblique;">Book Your Event with Us</h1>
+            <form action="checkout.html" method="POST"> <!-- Replace checkout.html with your actual checkout page URL -->
+                <div class="form-group">
+                    <label for="event-name">Event Name</label>
+                    <input type="text" id="event-name" placeholder="Event Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Type</label>
+                    <input type="text" id="event-type" placeholder="Type" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date" placeholder="Date" required>
+                </div>
+                <div class="form-group">
+                    <label for="start-time">Start Time</label>
+                    <input type="time" id="start-time" placeholder="Starting Time">
+                </div>
+                <div class="form-group">
+                    <label for="end-time">End Time</label>
+                    <input type="time" id="end-time" placeholder="Ending Time">
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests Expected</label>
+                    <input type="number" id="guests" placeholder="Guests Expected" onchange="calculateTotalBill()">
+                </div>
+                <div class="form-group">
+                    <label for="place">Select Place</label>
+                    <select name="place" id="place" onchange="calculateTotalBill()">
+                        <option value="">Select Place</option>
+                        <option value="place1">Vehari Castle</option>
+                        <option value="place2">Nawab Marquee</option>
+                        <option value="place2">A-One Marquee</option>
+                        <option value="place3">Kamal Palace</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="total-bill">Total Bill</label>
+                    <input type="text" id="total-bill" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="event-description">Event Description (max 1500 characters)</label>
+                    <textarea id="event-description" rows="5" placeholder="Event Description"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit & Proceed To Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotalBill() {
+            const guestsInput = document.getElementById('guests');
+            const totalBillInput = document.getElementById('total-bill');
+
+            const pricePerHead = 1000; // Price per head, can be set dynamically based on requirements
+            const numberOfGuests = parseInt(guestsInput.value);
+
+            const totalBill = pricePerHead * numberOfGuests;
+            totalBillInput.value = totalBill.toFixed(2);
+        }
+    </script>
+</body>
+</html>

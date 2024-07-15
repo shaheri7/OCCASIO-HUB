@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    padding: 20px;
+}
+
+.checkout-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.exit-btn,
+.action-btn,
+.save-btn {
+    background-color: #A17B3F;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.exit-btn:hover,
+.action-btn:hover,
+.save-btn:hover {
+    background-color: #000;
+}
+
+.payment-info {
+    background-color: transparent;
+    transform: rotate(-1.5deg);
+    padding: 20px;
+}
+
+.thank-you-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.radio-btn {
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.label-text {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.radio-label {
+    margin-right: 10px;
+}
+
+.copytight {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <img src="images/payment.jpg" alt="Background Image">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1 class="checkout-title">Checkout</h1>
+                <button id="exit_btn" class="exit-btn">X</button>
+                <button class="action-btn">Privacy Policy</button>
+                <button class="action-btn">Terms of Use</button>
+                <button class="action-btn">About Us</button>
+                <p class="copyright">© 2020 All Rights Reserved</p>
+                <button id="save_btn" class="save-btn">Save Changes</button>
+                <div class="payment-info">
+                    <h2 class="thank-you-text">Thank You for Booking with Us</h2>
+                    <input type="radio" id="easypaisa" name="payment" class="radio-btn">
+                    <label for="easypaisa" class="radio-label">Easy Paisa</label><br>
+                    <input type="radio" id="card" name="payment" class="radio-btn">
+                    <label for="card" class="radio-label">Credit/Debit Card</label><br>
+                    <input type="radio" id="jazzcash" name="payment" class="radio-btn">
+                    <label for="jazzcash" class="radio-label">Jazz Cash</label><br>
+                    <input type="text" id="cardNo" class="input-field" placeholder="Enter Card Number"><br>
+                    <input type="text" id="cardPin" class="input-field" placeholder="Enter Card Pin"><br>
+                    <input type="text" id="mobile" class="input-field" placeholder="Enter Mobile Number"><br>
+                    <label for="netTotal" class="label-text">Net Total:</label>
+                    <input type="text" id="netTotal" class="input-field" placeholder="Net Total">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

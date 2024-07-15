@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        position: relative;
+        height: 100vh;
+    }
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .form input,
+    .form button {
+        width: 50vh;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .form button {
+        background-color: #ffa600;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .form button:hover {
+        background-color: #000000;
+    }
+    .text {
+        text-align: left; /* Align the text to the left */
+    }
+
+    .text a {
+    text-decoration: none;
+    color: #ffae00; /* Adjust the color as needed */
+}
+
+.text a:hover {
+    text-decoration: none;
+}
+
+    @media screen and (max-width: 768px) {
+        .title {
+            font-size: 28px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+        }
+
+        .form input,
+        .form button {
+            padding: 8px;
+        }
+
+        .register-title {
+            font-size: 20px;
+        }
+    }
+
+    </style>
+   
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <img src="img/m1.jpg" alt="Background Image">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1 class="title" style="font-weight: 30px; font-style:normal;">OCCASSIOHUB</h1>
+                <h2 class="subtitle" style="font-style:oblique; color: #ffa600;">Planning Your Dreams</h2>
+                <form action="#" class="form">
+                    <input type="email" id="email" name="email" placeholder="Email Address" required> <br>
+                    <input type="password" id="pass" name="pass" placeholder="Password" required> <br>
+                    <div class="text">
+                      <a href="forgot_password.html">Forgot Password?</a>
+                  </div> <br>
+                    <button type="submit" class="register-btn">Log In</button> <br>
+                </form>
+                <div class="text">
+                  Don't have an account? <a href="custreg.html"><label>Signup Now</label></a>
+              </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>

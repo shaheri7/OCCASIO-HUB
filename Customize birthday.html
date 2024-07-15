@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/img/b1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .menu-container {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 80px;
+            margin-bottom: 10px;
+            background: rgb(0, 0, 0);
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            text-align: center; /* Center align content */
+        }
+        .menu-header {
+            font-family: 'Cursive', sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            gap: 10px; /* Reduce the gap between items */
+        }
+        .menu-item > div {
+            width: calc(50% - 5px); /* Each checkbox takes up 50% minus half of the gap */
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.1); /* Add background color with transparency */
+            border-radius: 5px; /* Add border radius for a rounded look */
+        }
+        .price {
+            font-weight: bold;
+            color: #f5bc01; /* Change price text color to yellow */
+            margin-top: 5px; /* Increase space between Balloons and Price */
+        }
+        .checkbox {
+            margin-left: 10px;
+        }
+        .total {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .total-bill {
+            display: inline-block;
+            padding: 10px;
+            background-color: #f5bc01;
+            border-radius: 5px;
+            font-weight: bold;
+            color: black;
+        }
+        .checkout-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .checkout-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="menu-container">
+        <h1 class="menu-header">Customize</h1>
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Make a Wish</h2>
+            <div class="menu-item">
+                
+                <div>
+                    <span>Balloons - 450</span>
+                    <span class="price">Rs-/6750</span>
+                    <input type="checkbox" class="checkbox" data-price="6750">
+                </div>
+                <div>
+                    <span>Balloons - 900</span>
+                    <span class="price">Rs-/13500</span>
+                    <input type="checkbox" class="checkbox" data-price="13500">
+                </div>
+                <div>
+                    <span>Balloons - 1350</span>
+                    <span class="price">Rs-/20250</span>
+                    <input type="checkbox" class="checkbox" data-price="20250">
+                </div>
+                <div>
+                    <span>Balloons - 1800</span>
+                    <span class="price">Rs-/27000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Balloon Arches</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 01</span>
+                    <span class="price">Rs-/1500</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 02</span>
+                    <span class="price">Rs-/3000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 03</span>
+                    <span class="price">Rs-/4500</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 03</span>
+                    <span class="price">Rs-/6000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Birthday Cap</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 01</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 05</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 10</span>
+                    <span class="price">Rs-/2700</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 20</span>
+                    <span class="price">Rs-/5400</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Welcome Theme Stand</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Panaflex Stand</span>
+                    <span class="price">Rs-/600</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Aluminum Tripod Stand</span>
+                    <span class="price">Rs-/2500</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Customized Welcome Stand</span>
+                    <span class="price">Rs-/1500</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>3d Sign Board</span>
+                    <span class="price">Rs-/₨5500</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Fire Cracker Candle</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Fire Cracker Candle - 05</span>
+                    <span class="price">Rs-/1000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Fire Cracker Candle - 10</span>
+                    <span class="price">Rs-/2000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Fire Cracker Candle - 15</span>
+                    <span class="price">Rs-/3000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Fire Cracker Candle - 20</span>
+                    <span class="price">Rs-/4000</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">customised cake</h2>
+            <div class="menu-item">
+                <div>
+                    <span>2-Pound</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>4-pound</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>8-Pound</span>
+                    <span class="price">Rs-/2700</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>12-pound</span>
+                    <span class="price">Rs-/5400</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Activities of your choice</h2>
+            <div class="menu-item">
+                <div>
+                    <span>01 Activities</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>02 Activities</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>03 Activities</span>
+                    <span class="price">Rs-/2700</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>04 Activities</span>
+                    <span class="price">Rs-/5400</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Guest Chairs & Tables</h2>
+            <div class="menu-item">
+                <div>
+                    <span>10 Chairs & 2 Tables</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>15 Chairs & 3 Tables</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>20 Chairs & 4 Tables</span>
+                    <span class="price">Rs-/2700</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>1-100 Chairs & 2-20 Tables</span>
+                    <span class="price">Rs-/5400</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Photographer</h2>
+            <div class="menu-item">
+                <div>
+                    <span>02 Hours</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>04 Hours</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Sound Systeme</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 01</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Videographer</h2>
+            <div class="menu-item">
+                <div>
+                    <span>B02 Hours</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>04 Hours</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Photo-booth / Selfie Corner</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 01</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Themed caps for friends</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 01</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 05</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 10</span>
+                    <span class="price">Rs-/2700</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 20</span>
+                    <span class="price">Rs-/5400</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-section">
+            <h2 style="text-align: center; color: #f5bc01;">Balloon Pillars</h2>
+            <div class="menu-item">
+                <div>
+                    <span>Balloons - 01</span>
+                    <span class="price">Rs-/270</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 05</span>
+                    <span class="price">Rs-/1350</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 10</span>
+                    <span class="price">Rs-/2700</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+                <div>
+                    <span>Balloons - 20</span>
+                    <span class="price">Rs-/5400</span>
+                    <input type="checkbox" class="checkbox" data-price="27000">
+                </div>
+            </div>
+        </div>
+
+        <div class="total" id="total">Total: Rs-0</div>
+
+        <div class="total-bill" id="total-bill">Total Bill: Rs-0</div>
+
+        <a href="#" class="checkout-btn" onclick="redirectToCheckout()">Checkout</a>
+
+        <script>
+            // JavaScript to calculate the total bill based on selected items
+            const checkboxes = document.querySelectorAll('.checkbox');
+            const totalDisplay = document.getElementById('total');
+            const totalBillDisplay = document.getElementById('total-bill');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateTotal);
+            });
+
+            function updateTotal() {
+                let total = 0;
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const price = parseFloat(checkbox.getAttribute('data-price'));
+                        if (!isNaN(price)) {
+                            total += price;
+                        }
+                    }
+                });
+                totalDisplay.textContent = `Total: Rs-${total}`;
+                totalBillDisplay.textContent = `Total Bill: Rs-${total}`;
+            }
+
+            function redirectToCheckout() {
+                // Placeholder function for redirecting to the checkout page
+                alert('Redirecting to checkout page...');
+            }
+        </script>
+    </div>
+</body>
+</html>
